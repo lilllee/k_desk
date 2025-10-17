@@ -6,9 +6,10 @@ yarn-error.log*
 
 # Build outputs
 dist/
-out/
+forge-out/
 build/
 *.tgz
+forge-out/
 
 # Electron specific
 *.exe
