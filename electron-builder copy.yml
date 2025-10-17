@@ -1,0 +1,43 @@
+appId: com.example.kdesk
+productName: K Desk
+asar: true
+
+directories:
+  output: dist
+
+files:
+  - "src/**"
+  - "resources/**"
+  - "package.json"
+  # Exclude common secret or noisy files from being packaged
+  - "!**/*.env"
+  - "!**/.env*"
+  - "!**/*id_rsa*"
+  - "!**/*id_dsa*"
+  - "!**/*id_ecdsa*"
+  - "!**/*id_ed25519*"
+  - "!**/*.{pem,key,der,crt,pfx,p12}"
+  - "!**/*.log"
+  - "!**/.git/**"
+  - "!**/.github/**"
+
+# Bundle optional seed DB so the app can copy it on first run
+extraResources:
+  - from: resources/seed
+    to: seed
+    filter:
+      - "app.sqlite"
+
+win:
+  target: nsis
+  publish:
+    - provider: github
+      owner: lilllee
+      repo: k-desk
+      releaseType: always
+
+nsis:
+  oneClick: true
+  allowToChangeInstallationDirectory: false
+  perMachine: false
+  artifactName: "${productName}-Setup-${version}.${ext}"
