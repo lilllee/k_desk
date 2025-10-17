@@ -7,6 +7,19 @@ module.exports = {
     asar: true,
     ignore: [/^\/forge-out\//],
   },
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'lilllee',
+          name: 'k_desk',
+        },
+        prerelease: false,
+        draft: true
+      },
+    },
+  ],
   rebuildConfig: {},
   makers: [
     {

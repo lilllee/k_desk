@@ -7,6 +7,7 @@ import createWsServer from './server'
 import path from 'path'
 import { defaultBrowserWindowOptions } from '@electron-toolkit/utils'
 
+
 app.setPath('userData', path.join(app.getPath('appData'), 'K-Desk'));
 function createWindow() {
   const ses = session.fromPartition('persist:kdesk');
