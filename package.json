@@ -8,12 +8,14 @@
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint --cache .",
-    "start": "electron-vite preview",
+    "start": "electron-forge start",
     "dev": "electron-vite dev",
     "build": "electron-vite build",
     "postinstall": "electron-builder install-app-deps",
     "build:unpack": "npm run build && electron-builder --dir",
-    "build:win": "npm run build && electron-builder --win"
+    "build:win": "npm run build && electron-builder --win",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.2",
@@ -28,6 +30,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.44.6",
+    "electron-squirrel-startup": "^1.0.1",
     "electron-updater": "^6.3.9",
     "fastify": "^5.6.1",
     "lucide-vue-next": "^0.545.0",
@@ -40,11 +43,18 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@electron-forge/cli": "^7.10.2",
+    "@electron-forge/maker-deb": "^7.10.2",
+    "@electron-forge/maker-rpm": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
+    "@electron-forge/maker-zip": "^7.10.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
+    "@electron-forge/plugin-fuses": "^7.10.2",
     "@electron-toolkit/eslint-config": "^2.1.0",
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
+    "@electron/fuses": "^1.8.0",
     "@vitejs/plugin-vue": "^6.0.1",
     "electron": "^38.1.2",
-    "electron-builder": "^25.1.8",
     "electron-vite": "^4.0.1",
     "eslint": "^9.36.0",
     "eslint-plugin-vue": "^10.4.0",
