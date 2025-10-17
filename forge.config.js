@@ -5,7 +5,13 @@ module.exports = {
   outDir: 'forge-out',
   packagerConfig: {
     asar: true,
-    ignore: [/^\/forge-out\//],
+    ignore: [
+      /^\/forge-out\//,
+      /^\/dist\//,
+      /^\/build\//,
+      /^\/release\//,
+      /^\/app-builds\//,
+    ],
   },
   publishers: [
     {
